@@ -1,5 +1,8 @@
 package se331.rest.entity;
 
+import lombok.*;
+
+import javax.persistence.*;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,6 +10,9 @@ import lombok.Data;
 @Data
 @Builder
 public class Event {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Exclude
     Long id;
     String category;
     String title;
